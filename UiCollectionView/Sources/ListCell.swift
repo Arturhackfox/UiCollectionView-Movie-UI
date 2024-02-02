@@ -107,12 +107,12 @@ class ListCollectionCell: UICollectionViewCell {
     func configure(with model: CompositionalModel) {
         self.bookCoverImage.image = UIImage(named: model.image)
         self.descriptionLabel.text = model.description
-        self.numberLabel.text = "\(model.numberOfItem!)"
+        self.numberLabel.text = "\(model.numberOfItem ?? 0)"
         self.titleLabel.text = model.mainTitle
     }
     
 }
 
 #Preview {
-        CompositionalViewController()
+    MovieSecondViewController()
     }

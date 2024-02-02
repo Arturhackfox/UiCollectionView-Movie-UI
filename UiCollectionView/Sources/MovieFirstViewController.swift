@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CompositionalViewController: UIViewController {
+class MovieFirstViewController: UIViewController {
     
     // MARK: - Ui
     
@@ -133,20 +133,20 @@ class CompositionalViewController: UIViewController {
     
 }
 
-extension CompositionalViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MovieFirstViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        3
+        CompositionalModel.modelsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 20
+            CompositionalModel.modelsArray[section].count
         case 1:
-            return 10
+            CompositionalModel.modelsArray[section].count
          default:
-            return 9
+            CompositionalModel.modelsArray[section].count
         }
     }
     
@@ -173,5 +173,5 @@ extension CompositionalViewController: UICollectionViewDataSource, UICollectionV
 
 
 #Preview {
-        CompositionalViewController()
+        MovieFirstViewController()
     }

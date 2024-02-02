@@ -120,6 +120,6 @@ class BookCoverCollectionCell: UICollectionViewCell {
 }
 
 #Preview {
-        CompositionalViewController()
+        MovieFirstViewController()
     }
 

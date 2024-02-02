@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let viewControllerMovie = MovieViewController()
-        let viewControllerCompostional = CompositionalViewController()
+        let viewControllerCompostional = MovieSecondViewController()
         let navigation = UINavigationController(rootViewController: viewControllerCompostional)
         
         window?.rootViewController = navigation
