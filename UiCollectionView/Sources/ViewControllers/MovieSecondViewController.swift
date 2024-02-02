@@ -44,7 +44,7 @@ class MovieSecondViewController: UIViewController {
                 let bigItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                       heightDimension: .fractionalHeight(1))
                 let bigItem = NSCollectionLayoutItem(layoutSize: bigItemSize)
-                bigItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 15, bottom: 15, trailing: 15)
+                bigItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 15, trailing: 15)
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                        heightDimension: .estimated(200))
@@ -53,9 +53,14 @@ class MovieSecondViewController: UIViewController {
                 
 
                 let layoutSection = NSCollectionLayoutSection(group: mainGroup)
-                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 35, leading: 0, bottom: 0, trailing: 0)
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(50))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                         elementKind: UICollectionView.elementKindSectionHeader,
+                                                                         alignment: .top)
                 
                 layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+                layoutSection.boundarySupplementaryItems = [header]
                 
                 return layoutSection
                 
@@ -77,6 +82,14 @@ class MovieSecondViewController: UIViewController {
                 
                 // Установка поведения прокрутки
                 layoutSection.orthogonalScrollingBehavior = .groupPaging
+                
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93),
+                                                        heightDimension: .estimated(30))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                         elementKind: UICollectionView.elementKindSectionHeader,
+                                                                         alignment: .top)
+                
+                layoutSection.boundarySupplementaryItems = [header]
                 
                 return layoutSection
                
@@ -175,10 +188,23 @@ extension MovieSecondViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeader.identifier, for: indexPath) as! CustomHeader
-        header.label.text = "First Header"
+        switch indexPath.section {
+        case 0:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeader.identifier, for: indexPath) as! CustomHeader
+            header.label.text = "Featured"
+            return header
+        case 1:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeader.identifier, for: indexPath) as! CustomHeader
+            header.label.text = "Your collection"
+            return header
+        default:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeader.identifier, for: indexPath) as! CustomHeader
+            header.label.text = "Best sellers"
+            return header
+        }
+       
         
-        return header
+        
     }
 }
 

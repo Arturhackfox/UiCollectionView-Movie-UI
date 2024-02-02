@@ -22,11 +22,11 @@ struct CompositionalModel {
 
 extension CompositionalModel {
     static let modelsArray = [
-        [CompositionalModel(mainTitle: "Featured Collection", description: "Biography", image: "all", numberOfItem: 1),
-         CompositionalModel(mainTitle: "Featured Collection", description: "Romance", image: "all", numberOfItem: 2),
-         CompositionalModel(mainTitle: "Featured Collection", description: "Fiction", image: "all", numberOfItem: 3),
-         CompositionalModel(mainTitle: "Featured Collection", description: "Poetry", image: "all", numberOfItem: 4),
-         CompositionalModel(mainTitle: "Featured Collection", description: "Philosophy", image: "all", numberOfItem: 5)
+        [CompositionalModel(mainTitle: "Explore", description: "Biography", image: "all", numberOfItem: 1),
+         CompositionalModel(mainTitle: "Explore", description: "Romance", image: "all", numberOfItem: 2),
+         CompositionalModel(mainTitle: "Explore", description: "Fiction", image: "all", numberOfItem: 3),
+         CompositionalModel(mainTitle: "Explore", description: "Poetry", image: "all", numberOfItem: 4),
+         CompositionalModel(mainTitle: "Explore", description: "Philosophy", image: "all", numberOfItem: 5)
         ],
         [
             CompositionalModel(mainTitle: nil, description: nil, image: "cover1"),

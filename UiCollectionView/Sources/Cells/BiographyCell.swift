@@ -92,12 +92,7 @@ class BiographyCollectionCell: UICollectionViewCell {
             
             ])
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.bookCoverImage.image = nil
-    }
-    
+
 
     func configure(with data: CompositionalModel, index: Int) {
         self.collectionLabel.text = data.description
