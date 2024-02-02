@@ -20,6 +20,7 @@
 		32D4A6062B6CCA00002C5FC5 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4A6052B6CCA00002C5FC5 /* ListCell.swift */; };
 		32D4A6082B6CE255002C5FC5 /* BiographyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4A6072B6CE255002C5FC5 /* BiographyCell.swift */; };
 		32D4A60A2B6CFE37002C5FC5 /* MovieSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4A6092B6CFE37002C5FC5 /* MovieSecondViewController.swift */; };
+		32D4A60E2B6D0F87002C5FC5 /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D4A60D2B6D0F87002C5FC5 /* CustomHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		32D4A6052B6CCA00002C5FC5 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		32D4A6072B6CE255002C5FC5 /* BiographyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyCell.swift; sourceTree = "<group>"; };
 		32D4A6092B6CFE37002C5FC5 /* MovieSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSecondViewController.swift; sourceTree = "<group>"; };
+		32D4A60D2B6D0F87002C5FC5 /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,14 +92,9 @@
 		32D4A5F82B6B7CBF002C5FC5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32D4A6032B6BA6C5002C5FC5 /* MovieFirstViewController.swift */,
-				32D4A6092B6CFE37002C5FC5 /* MovieSecondViewController.swift */,
-				32D4A5E72B6B7CA2002C5FC5 /* CollectionFlowViewComtroller.swift */,
-				32D4A5FA2B6B8024002C5FC5 /* DefaultCell.swift */,
-				32D4A5FC2B6B85DB002C5FC5 /* BookCoverCell.swift */,
-				32D4A6012B6BA61F002C5FC5 /* DefaultCompositionalCell.swift */,
-				32D4A6052B6CCA00002C5FC5 /* ListCell.swift */,
-				32D4A6072B6CE255002C5FC5 /* BiographyCell.swift */,
+				32D4A60B2B6D0F52002C5FC5 /* ViewControllers */,
+				32D4A60C2B6D0F69002C5FC5 /* Cells */,
+				32D4A60F2B6D0F8A002C5FC5 /* Headers and Footers */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -118,6 +115,36 @@
 				32D4A5FF2B6B938E002C5FC5 /* BookModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		32D4A60B2B6D0F52002C5FC5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				32D4A6032B6BA6C5002C5FC5 /* MovieFirstViewController.swift */,
+				32D4A6092B6CFE37002C5FC5 /* MovieSecondViewController.swift */,
+				32D4A5E72B6B7CA2002C5FC5 /* CollectionFlowViewComtroller.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		32D4A60C2B6D0F69002C5FC5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				32D4A5FA2B6B8024002C5FC5 /* DefaultCell.swift */,
+				32D4A5FC2B6B85DB002C5FC5 /* BookCoverCell.swift */,
+				32D4A6012B6BA61F002C5FC5 /* DefaultCompositionalCell.swift */,
+				32D4A6052B6CCA00002C5FC5 /* ListCell.swift */,
+				32D4A6072B6CE255002C5FC5 /* BiographyCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		32D4A60F2B6D0F8A002C5FC5 /* Headers and Footers */ = {
+			isa = PBXGroup;
+			children = (
+				32D4A60D2B6D0F87002C5FC5 /* CustomHeader.swift */,
+			);
+			path = "Headers and Footers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +222,7 @@
 				32D4A6002B6B938E002C5FC5 /* BookModel.swift in Sources */,
 				32D4A6022B6BA61F002C5FC5 /* DefaultCompositionalCell.swift in Sources */,
 				32D4A6082B6CE255002C5FC5 /* BiographyCell.swift in Sources */,
+				32D4A60E2B6D0F87002C5FC5 /* CustomHeader.swift in Sources */,
 				32D4A5FD2B6B85DB002C5FC5 /* BookCoverCell.swift in Sources */,
 				32D4A5E82B6B7CA2002C5FC5 /* CollectionFlowViewComtroller.swift in Sources */,
 				32D4A6042B6BA6C5002C5FC5 /* MovieFirstViewController.swift in Sources */,

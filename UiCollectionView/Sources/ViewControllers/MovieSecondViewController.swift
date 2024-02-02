@@ -15,6 +15,8 @@ class MovieSecondViewController: UIViewController {
         collection.register(BiographyCollectionCell.self, forCellWithReuseIdentifier: BiographyCollectionCell.identifier)
         collection.register(BookCoverCollectionCell.self, forCellWithReuseIdentifier: BookCoverCollectionCell.identifier)
         collection.register(ListCollectionCell.self, forCellWithReuseIdentifier: ListCollectionCell.identifier)
+        collection.register(CustomHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CustomHeader.identifier)
+
         collection.translatesAutoresizingMaskIntoConstraints = false
         
         return collection
@@ -92,12 +94,21 @@ class MovieSecondViewController: UIViewController {
                 let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 10)
                 
                 
-                layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 0, bottom: 2.5, trailing: 0)
+                layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 2.5, trailing: 0)
                 
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0)
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                 
                 layoutSection.orthogonalScrollingBehavior = .groupPaging
+                
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93),
+                                                        heightDimension: .estimated(70))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: headerSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top)
+                
+                layoutSection.boundarySupplementaryItems = [header]
                 
                 return layoutSection
                
@@ -161,6 +172,13 @@ extension MovieSecondViewController: UICollectionViewDataSource, UICollectionVie
             return cell ?? UICollectionViewCell()
            
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeader.identifier, for: indexPath) as! CustomHeader
+        header.label.text = "First Header"
+        
+        return header
     }
 }
 

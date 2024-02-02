@@ -101,6 +101,7 @@ class ListCollectionCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         self.bookCoverImage.image = nil
     }
     
@@ -110,6 +111,7 @@ class ListCollectionCell: UICollectionViewCell {
         self.numberLabel.text = "\(model.numberOfItem ?? 0)"
         self.titleLabel.text = model.mainTitle
     }
+    
     
 }
 
